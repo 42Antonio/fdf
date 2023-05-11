@@ -1,4 +1,3 @@
-
 #include "fdf.h"
 
 void	map_dimensions(char *file, t_fdf *data)
@@ -32,10 +31,10 @@ void	allocate_matrix(t_fdf *data)
 {
 	int	i;
 
+	i = 0;
 	data->matrix = (int **)malloc(sizeof(int *) * (data->height + 1));
 	if (!data->matrix)
 		return ;
-	i = 0;
 	while (i < data->height)
 	{
 		data->matrix[i] = (int *)malloc(sizeof(int) * (data->width + 1));
@@ -46,9 +45,9 @@ void	allocate_matrix(t_fdf *data)
 
 void	set_row(char *line, int *row)
 {
-	int		i;
 	char	**zs;
-
+	int		i;
+	
 	zs = ft_split(line, ' ');
 	i = 0;
 	while (zs[i])
